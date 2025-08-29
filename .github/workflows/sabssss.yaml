@@ -16,11 +16,11 @@ jobs:
 
       - name: "Build Docker Image"
         run: |
-          docker login -u sabssss -p $DOCKERHUB_PAT
+          docker login -u sabssss -p $DOCKER_PAT
           docker build -t sabssss/mywebsite .
           docker push sabssss/mywebsite
         env:
-          DOCKERHUB_PAT: ${{ secrets.DOCKERHUB_PAT }}
+          DOCKER_PAT: ${{ secrets.DOCKER_PAT }}
 
       - name: "Configure SSH"
         run: |
